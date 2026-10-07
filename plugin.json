@@ -1,0 +1,5 @@
+{
+  "name": "multiagent",
+  "version": "1.4.0",
+  "description": "Autonomous multi-agent development agents: live orchestrator, grill-me planner, developer, reviewer/tester, DevOps engineer, security auditor, and technical writer."
+}
