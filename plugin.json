@@ -1,5 +1,5 @@
 {
   "name": "multiagent",
-  "version": "1.4.0",
-  "description": "Autonomous multi-agent development agents: live orchestrator, grill-me planner, developer, reviewer/tester, DevOps engineer, security auditor, and technical writer."
+  "version": "1.5.0",
+  "description": "Autonomous multi-agent development plugin: live orchestrator with DAG parallel dispatch and sandboxing, grill-me planner, developer, reviewer/tester, DevOps engineer, security auditor, technical writer, data engineer, and UI tester."
 }

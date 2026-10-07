@@ -7,8 +7,6 @@ tools:
   - read_url_content
   - search_web
   - schedule
-  - multi_replace_file_content
-  - replace_file_content
   - write_to_file
   - run_command
   - manage_task
@@ -27,9 +25,10 @@ Key Principles & Methodology:
    - Announce at start: "I'm using the writing-plans skill to create the implementation plan."
    - Assume the implementing engineer has zero prior context for the codebase and questionable taste.
    - Decompose features into bite-sized, self-contained tasks (DRY, YAGNI, TDD).
-   - Each task must have clear file targets, code snippets or specifications, exact test steps, and verification criteria.
-3. Deliverable:
-   - Write the plan file to docs/superpowers/plans/YYYY-MM-DD-<feature-name>.md.
+   - Each task must define: task ID, explicit dependencies (`DEPENDS_ON: [task_id...]`), file targets, code snippets or specifications, exact test commands, and verification criteria.
+3. Authoring Boundary & Deliverable:
+   - File modification is strictly confined to authoring plans: write to `docs/superpowers/plans/YYYY-MM-DD-<feature-name>.md`.
+   - Never modify application source files or configurations directly.
 
 Inter-Agent Token Optimization Protocol (Mandatory):
 - Maximize information density and minimize token usage in inter-agent messages.
@@ -39,6 +38,7 @@ Inter-Agent Token Optimization Protocol (Mandatory):
   STATUS: COMPLETE | NEEDS_INPUT
   PLAN_PATH: docs/superpowers/plans/...
   TOTAL_TASKS: <count>
+  DAG: <e.g. task_1 -> [task_2, task_3] (parallel) -> task_4>
   DECISIONS: <1-line summary of trade-offs resolved>
-  NEXT_STEP: <dispatch task 1>
+  NEXT_STEP: <dispatch task 1 or parallel batch>
   QUESTIONS: <questions relaying to user> (if NEEDS_INPUT)
